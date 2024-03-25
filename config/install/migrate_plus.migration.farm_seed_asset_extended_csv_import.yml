@@ -1,0 +1,82 @@
+langcode: en
+status: true
+dependencies: {  }
+id: farm_seed_asset_extended_csv_importer
+label: 'Asset: Seed (Extended)'
+migration_group: farm_import_csv
+migration_tags: []
+source:
+  plugin: csv_file
+destination:
+  plugin: 'entity:asset'
+process:
+  # Hard-code the bundle.
+  type:
+    plugin: default_value
+    default_value: seed
+  # Default Asset fields
+  ## Asset name.
+  name: name
+  ## Asset notes with default format.
+  notes/0/value: notes
+  notes/0/format:
+    plugin: default_value
+    default_value: default
+  ## Parent asset reference lookup.
+  parent:
+    - plugin: explode
+      delimiter: ,
+      source: parents
+    - plugin: asset_lookup
+  ## Asset status.
+  status:
+    - plugin: get
+      source: status
+    - plugin: default_value
+      default_value: active
+  # Default Seed Asset fields
+  ## Plant type
+  plant_type:
+    plugin: term_lookup
+    bundle: plant_type
+    source: plant type
+  ## Season
+  season:
+    plugin: term_lookup
+    bundle: season
+    source: season
+  # Custom fields
+  ## Packed for Year on the seed packet
+  packed_for_year: packed for year
+  ## Parse the asset purchase_date with strtotime() from purchase date column.
+  purchase_date:
+    plugin: callback
+    callable: strtotime
+    source: purchase date
+  ## Cost of the seed packet
+  seed_cost: cost
+migration_dependencies: {  }
+third_party_settings:
+  farm_import_csv:
+    access:
+      permissions:
+        - create seed assset
+    columns:
+      - name: name
+        description: Name of the asset. Required.
+      - name: parents
+        description: Parents of the asset. Accepts asset names, ID tags, UUIDs, and IDs. Multiple assets can be separated by commas with the whole cell wrapped in quotes.
+      - name: notes
+        description: Notes about the asset.
+      - name: status
+        description: 'Status of the asset. Allowed values: active, archived. Defaults to active.'
+      - name: plant type
+        description: Plant Type of the seed asset.
+      - name: season
+        description: Season the seed asset is planted.
+      - name: packed for year
+        description: Year the seeds were packed for.
+      - name: purchase date
+        description: Date the seeds were purchased.
+      - name: cost
+        description: Cost of the seed packet.

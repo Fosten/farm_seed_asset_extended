@@ -1,0 +1,8 @@
+name: Seed Asset Extended
+description: An extended farmOS seed asset.
+type: module
+package: farmOS Contrib
+core_version_requirement: ^10
+dependencies:
+  - farm:farm_seed
+  - farm:farm_import_csv

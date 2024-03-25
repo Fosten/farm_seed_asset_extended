@@ -1,0 +1,14 @@
+{
+    "name": "fosten/farm_seed_asset_extended",
+    "description": "An extended farmOS seed asset",
+    "type": "drupal-module",
+    "authors": [
+        {
+            "name": "Brian Davis",
+            "email": "info@lillymountain.com"
+        }
+    ],
+    "require": {
+      "farmos/farmos": "^3.0"
+    }
+  }

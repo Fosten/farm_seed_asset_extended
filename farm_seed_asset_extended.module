@@ -1,0 +1,52 @@
+<?php
+
+use Drupal\Core\Entity\EntityTypeInterface;
+
+/**
+ * Implements hook_farm_entity_bundle_field_info().
+ */
+function farm_seed_asset_extended_farm_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle) {
+  $fields = [];
+
+  // Add a new fields to Seed Assets. 'asset' specifies the entity type and
+  // 'seed' specifies the bundle.
+  if ($entity_type->id() == 'asset' && $bundle == 'seed') {
+    // Options for the new field. See Field options below.
+    $options = [
+      'type' => 'string',
+      'label' => t('Packed for year'),
+      'description' => t('The year the seeds were packed for (written on the seed packet).'),
+      'weight' => [
+        'form' => 10,
+        'view' => 10,
+      ],
+    ];
+    $fields['packed_for_year'] = \Drupal::service('farm_field.factory')->bundleFieldDefinition($options);
+
+    // Options for the new field. See Field options below.
+    $options = [
+      'type' => 'timestamp',
+      'label' => t('Purchase Date'),
+      'description' => t('Date the seeds were purchased.'),
+      'weight' => [
+        'form' => 10,
+        'view' => 10,
+      ],
+    ];
+    $fields['purchase_date'] = \Drupal::service('farm_field.factory')->bundleFieldDefinition($options);
+
+    // Options for the new field. See Field options below.
+    $options = [
+      'type' => 'string',
+      'label' => t('Cost'),
+      'description' => t('Cost of the seed packet.'),
+      'weight' => [
+        'form' => 10,
+        'view' => 10,
+      ],
+    ];
+    $fields['seed_cost'] = \Drupal::service('farm_field.factory')->bundleFieldDefinition($options);
+  }
+
+  return $fields;
+}
