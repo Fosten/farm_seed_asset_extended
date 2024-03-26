@@ -1,6 +1,11 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - farm_seed_asset_extended
+  enforced:
+    module:
+    - farm_seed_asset_extended
 id: farm_seed_asset_extended_csv_importer
 label: 'Asset: Seed (Extended)'
 migration_group: farm_import_csv
