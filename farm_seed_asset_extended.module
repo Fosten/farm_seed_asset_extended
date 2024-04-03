@@ -38,7 +38,7 @@ function farm_seed_asset_extended_farm_entity_bundle_field_info(EntityTypeInterf
     // Options for the new field. See Field options below.
     $options = [
       'type' => 'string',
-      'label' => t('Cost'),
+      'label' => t('Seed Cost'),
       'description' => t('Cost of the seed packet.'),
       'weight' => [
         'form' => 10,
@@ -46,6 +46,19 @@ function farm_seed_asset_extended_farm_entity_bundle_field_info(EntityTypeInterf
       ],
     ];
     $fields['seed_cost'] = \Drupal::service('farm_field.factory')->bundleFieldDefinition($options);
+  }
+
+    // Options for the new field. See Field options below.
+    $options = [
+      'type' => 'string',
+      'label' => t('Seed Weight'),
+      'description' => t('Weight of the seed packet.'),
+      'weight' => [
+        'form' => 10,
+        'view' => 10,
+      ],
+    ];
+    $fields['seed_weight'] = \Drupal::service('farm_field.factory')->bundleFieldDefinition($options);
   }
 
   return $fields;

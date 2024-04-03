@@ -59,7 +59,8 @@ process:
     callable: strtotime
     source: purchase date
   ## Cost of the seed packet
-  seed_cost: cost
+  seed_cost: seed cost
+  seed_weight: seed weight
 migration_dependencies: {  }
 third_party_settings:
   farm_import_csv:
@@ -83,5 +84,7 @@ third_party_settings:
         description: Year the seeds were packed for.
       - name: purchase date
         description: Date the seeds were purchased.
-      - name: cost
+      - name: seed cost
         description: Cost of the seed packet.
+      - name: seed weight
+        description: Weight of the seed packet.
