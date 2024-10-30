@@ -13,18 +13,6 @@ function farm_seed_asset_extended_farm_entity_bundle_field_info(EntityTypeInterf
   if ($entity_type->id() == 'asset' && $bundle == 'seed') {
     // Options for the new field. See Field options below.
     $options = [
-      'type' => 'string',
-      'label' => t('Packed for year'),
-      'description' => t('The year the seeds were packed for (written on the seed packet).'),
-      'weight' => [
-        'form' => 10,
-        'view' => 10,
-      ],
-    ];
-    $fields['packed_for_year'] = \Drupal::service('farm_field.factory')->bundleFieldDefinition($options);
-
-    // Options for the new field. See Field options below.
-    $options = [
       'type' => 'timestamp',
       'label' => t('Purchase Date'),
       'description' => t('Date the seeds were purchased.'),

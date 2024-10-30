@@ -49,8 +49,6 @@ process:
     bundle: season
     source: season
   # Custom fields
-  ## Packed for Year on the seed packet
-  packed_for_year: packed for year
   ## Parse the asset purchase_date with strtotime() from purchase date column.
   purchase_date:
     plugin: callback
