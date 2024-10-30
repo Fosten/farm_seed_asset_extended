@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - farm_seed_asset_extended
   enforced:
     module:
     - farm_seed_asset_extended
