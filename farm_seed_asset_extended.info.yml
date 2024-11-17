@@ -5,4 +5,3 @@ package: farmOS Contrib
 core_version_requirement: ^10
 dependencies:
   - farm:farm_seed
-  - farm:farm_import_csv
