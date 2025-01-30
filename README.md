@@ -9,6 +9,7 @@ Provides additional fields to Seed Assets:
 - purchase_date
 - seed_cost
 - seed_weight
+- seed_url
 
 ## Maintainers
 

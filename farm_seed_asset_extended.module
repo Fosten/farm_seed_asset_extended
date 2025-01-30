@@ -46,6 +46,19 @@ function farm_seed_asset_extended_farm_entity_bundle_field_info(EntityTypeInterf
       ],
     ];
     $fields['seed_weight'] = \Drupal::service('farm_field.factory')->bundleFieldDefinition($options);
+
+    // Options for the new field. See Field options below.
+    $options = [
+      'type' => 'uri',
+      'label' => t('Seed URL'),
+      'description' => t('URL where the seeds were purchased.'),
+      'weight' => [
+        'form' => 10,
+        'view' => 10,
+      ],
+    ];
+    $fields['seed_url'] = \Drupal::service('farm_field.factory')->bundleFieldDefinition($options);
+
   }
 
   return $fields;
