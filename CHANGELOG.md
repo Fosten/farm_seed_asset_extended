@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] (2026-04-28)
+
+- Release 2.0.0 [fosten]
 - Add support for Drupal 11 and farmOS v4 [fosten]
 - Add CHANGELOG.md [fosten]
 
@@ -27,7 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial commit [fosten]
 
-[Unreleased]: https://github.com/Fosten/farm_seed_asset_extended/compare/1.1.0...main
+[Unreleased]: https://github.com/Fosten/farm_seed_asset_extended/compare/2.0.0...main
+[2.0.0]: https://github.com/Fosten/farm_seed_asset_extended/releases/tag/2.0.0
 [1.1.0]: https://github.com/Fosten/farm_seed_asset_extended/releases/tag/1.1.0
 [1.0.0]: https://github.com/Fosten/farm_seed_asset_extended/releases/tag/1.0.0
 [0.1.0]: https://github.com/Fosten/farm_seed_asset_extended/releases/tag/0.1.0
